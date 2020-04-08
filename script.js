@@ -1,4 +1,4 @@
-var chart = new CanvasJS.Chart("chartContainer", {
+var chart = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 	title: {
 		text: "How Often Language Tutorials are Searched on Google"
@@ -25,95 +25,126 @@ var chart = new CanvasJS.Chart("chartContainer", {
 chart.render();
 
 
-
-
-
-var Bronx = {
-    label: "Bronx",
-    data: [1451277, 1424815, 1471701, 1168972, 1203789, 1332650, 1385108, 1446788],
-    lineTension: 0,
-    fill: false,
-    borderColor: '#9AC2DB'
-  };
-
-var Brooklyn = {
-    label: "Brooklyn",
-    data: [2738175, 2627319, 2602012, 2230936, 2300664, 2465326, 2552911, 2648452],
-    lineTension: 0,
-    fill: false,
-    borderColor: '#DEB9B4'
-  };
-
-  var Manhattan = {
-    label: "Manhattan",
-    data: [1960101, 1698281, 1539233, 1428285, 1487536, 1537195, 1585873, 1638281],
-    lineTension: 0,
-    fill: false,
-    borderColor: '#F1C28E'
-  };
-
-  var Queens = {
-    label: "Queens",
-    data: [1550849, 1809578, 1986473, 1891325, 1951598, 2229379, 2250002, 2330295],
-    lineTension: 0,
-    fill: false,
-    borderColor: '#96ACAC'
-  };
-
-  var StatenIsland = {
-    label: "Staten Island",
-    data: [191555, 221991, 295443, 352121, 378977, 443728, 468730, 487155], 
-    lineTension: 0,
-    fill: false,
-    borderColor: '#988D8E'
-  };
-
-
-
-
-
-var Data = {
-      labels: ['1950','1960','1970','1980','1990','2000','2010','2020'],
-      datasets: [Bronx, Brooklyn, Manhattan, Queens, StatenIsland] 
-    };
-    
-
-let myChart3 = document.getElementById("myChart3").getContext('2d');
-
-let chart3 = new Chart(myChart3, { 
-    type: 'line',
-    data:  Data,
-    options: {
-        title: {
-            text: "How Has the Population in Five Boroughs of New York City Changed Over Time?",
-            display: true
-        },
-        responsive: true,
-        maintainAspectRatio: true
-    }
+var chart = new CanvasJS.Chart("chartContainer2", {
+	animationEnabled: true,
+	
+	title:{
+		text:"Top 10 Most Popular Programming, Scripting, and Markup Languages"
+	},
+	axisX:{
+		interval: 1
+	},
+	axisY2:{
+		// title: "Number of Companies"
+	},
+	data: [{
+		type: "bar",
+        name: "companies",
+        yValueFormatString: "##0.00\"%\"",
+		axisYType: "secondary",
+		color: "#FFD395",
+		dataPoints: [
+            { y: 20.6, label: "C" },
+            { y: 21.2, label: "TypeScript" },
+            { y: 23.5, label: "c++" },
+            { y: 26.4, label: "PHP" },
+			{ y: 31, label: "C#" },
+			{ y: 41.1, label: "Java" },
+			{ y: 41.7, label: "Python" },
+			{ y: 54.4, label: "SQL" },
+            { y: 63.5, label: "HTML/CSS" },
+            { y: 67.8, label: "JavaScript" }
+		]
+	}]
 });
+chart.render();
 
 
-let labels1 = ['Bronx','Brooklyn','Manhattan','Queens','Staten Island'];
-let data1 = [1446788, 2648452, 1638281, 2330295, 487155];
-let colors1 = ['#9AC2DB','#DEB9B4','#F1C28E','#96ACAC','#988D8E']
-let myChart1 = document.getElementById("myChart1").getContext('2d');
-
-let chart1 = new Chart(myChart1, {
-    type: 'doughnut',
-    data: {
-        labels: labels1,
-        datasets: [{
-            data: data1,
-            backgroundColor: colors1
-        }]
+var chart = new CanvasJS.Chart("chartContainer3", {
+	animationEnabled: true,
+	title:{
+		text: "Top Programming Languages In-demand with Employers"
+	},
+	axisX: {
+		valueFormatString: "MMM, YYYY"
+	},
+	axisY: {
+		title: "Post Count",
+		includeZero: true,
+	},
+	legend:{
+		cursor: "pointer",
+		fontSize: 16,
+		itemclick: toggleDataSeries
+	},
+	toolTip:{
+		shared: true
+	},
+	data: [{
+		name: "Python",
+		type: "spline",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,1,31), y: 41000 },
+			{ x: new Date(2018,1,31), y: 46000 },
+			{ x: new Date(2019,1,31), y: 61818 },
+			{ x: new Date(2020,1,31), y: 73733 } 
+		]
+	},
+	{
+		name: "Java",
+		type: "spline",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,1,31), y: 68000 },
+			{ x: new Date(2018,1,31), y: 62000 },
+			{ x: new Date(2019,1,31), y: 65986 },
+			{ x: new Date(2020,1,31), y: 69410 }
+		]
     },
-    options: {
-        title: {
-            text: "New York City Population by Borough in 2020",
-            display: true
-        },
-        responsive: true,
-        maintainAspectRatio: true
-    }
+    {
+		name: "C++",
+		type: "spline",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,1,31), y: 33000 },
+			{ x: new Date(2018,1,31), y: 31000 },
+			{ x: new Date(2019,1,31), y: 36798 },
+			{ x: new Date(2020,1,31), y: 41026 }
+		]
+    },
+    {
+		name: "C#",
+		type: "spline",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,1,31), y: 28000 },
+			{ x: new Date(2018,1,31), y: 27000 },
+			{ x: new Date(2019,1,31), y: 27521 },
+			{ x: new Date(2020,1,31), y: 31929 }
+		]
+    },  
+	{
+		name: "JavaScript",
+		type: "spline",
+		showInLegend: true,
+		dataPoints: [
+			{ x: new Date(2017,1,31), y: 40000 },
+			{ x: new Date(2018,1,31), y: 38000 },
+			{ x: new Date(2019,1,31), y: 38018 },
+			{ x: new Date(2020,1,31), y: 56499 }
+		]
+	}]
 });
+chart.render();
+
+function toggleDataSeries(e){
+	if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+		e.dataSeries.visible = false;
+	}
+	else{
+		e.dataSeries.visible = true;
+	}
+	chart.render();
+}
+
