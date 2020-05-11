@@ -1,7 +1,7 @@
 var chart = new CanvasJS.Chart("chartContainer1", {
 	animationEnabled: true,
 	title: {
-		text: "How Often Language Tutorials are Searched on Google"
+		text: "Python, Java and JavaScript Tutorials are Most Often Searched on Google"
 	},
 	data: [{
 		type: "pie",
@@ -29,7 +29,7 @@ var chart = new CanvasJS.Chart("chartContainer2", {
 	animationEnabled: true,
 	
 	title:{
-		text:"Top 10 Most Popular Programming, Scripting, and Markup Languages"
+		text:"JavaScript, Python and Java are Most Popular According To developers"
 	},
 	axisX:{
 		interval: 1
@@ -63,7 +63,7 @@ chart.render();
 var chart = new CanvasJS.Chart("chartContainer3", {
 	animationEnabled: true,
 	title:{
-		text: "Top Programming Languages In-demand with Employers"
+		text: "Python and Java are Most In-demand With Employers, followed by JavaScript"
 	},
 	axisX: {
 		valueFormatString: "MMM, YYYY"
